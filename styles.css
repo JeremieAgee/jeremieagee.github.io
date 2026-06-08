@@ -1,231 +1,294 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --accent: #a78bfa;
+  --accent2: #818cf8;
+  --bg: #05050d;
+  --surface: #0f0b1e;
+  --surface2: #160d2a;
+  --border: rgba(255,255,255,0.09);
+  --text: #e8e4ff;
+  --text2: #a89fc4;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #3b1d7a 0%, #0b0713 55%, #05050d 100%);
-  color: #f0f0ff;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  overflow: hidden;
+}
+
+/* ── Header ── */
+.site-header {
+  width: 100%;
+  text-align: center;
+  padding: 3rem 1rem 1.5rem;
+  background: linear-gradient(180deg, #130a2a 0%, transparent 100%);
 }
 
 h1 {
-  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-size: clamp(2.4rem, 5vw, 4rem);
   letter-spacing: 0.12em;
-  color: #c4b5fd;
-  margin-bottom: 0.4rem;
+  color: var(--accent);
   text-transform: uppercase;
-  text-shadow: 0 0 18px rgba(199, 210, 254, 0.35);
+  text-shadow: 0 0 24px rgba(167,139,250,0.4);
+  margin-bottom: 0.5rem;
 }
 
-p.tagline {
-  font-size: 1rem;
-  color: #cbd5e1;
-  margin-bottom: 2rem;
-  text-align: center;
-  max-width: 34rem;
-  line-height: 1.6;
+.tagline {
+  font-size: 1.05rem;
+  color: var(--text2);
+  letter-spacing: 0.03em;
 }
 
+/* ── Arcade hero ── */
 .arcade-scene {
-  perspective: 1200px;
-  width: min(90vw, 520px);
-  max-width: 600px;
-  margin-bottom: 2.5rem;
-}
-
-.arcade-building {
-  position: relative;
-  transform-style: preserve-3d;
-  transform: rotateX(12deg) rotateY(-8deg);
-  width: 100%;
-  min-height: 340px;
-  margin: 0 auto;
-}
-
-.arcade-sign {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 88%;
-  padding: 1rem 1.2rem;
-  border-radius: 1.2rem;
-  background: rgba(98, 51, 255, 0.18);
-  border: 1px solid rgba(167, 139, 250, 0.35);
+  width: min(96vw, 900px);
+  margin: 2rem auto 0;
   text-align: center;
-  color: #f8f7ff;
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  box-shadow: 0 18px 40px rgba(25, 9, 61, 0.35);
-  z-index: 3;
 }
 
-.arcade-front {
+.arcade-wrap {
   position: relative;
   width: 100%;
-  height: 260px;
-  margin-top: 4rem;
-  border-radius: 2rem;
-  background: linear-gradient(180deg, #241a55 0%, #120c28 65%, #0b0814 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.05), 0 22px 45px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
   overflow: hidden;
+  box-shadow: 0 0 60px rgba(168,85,247,0.35);
 }
 
-.arcade-front::before {
-  content: '';
+.arcade-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: 50% 72%;
+}
+
+.arcade-wrap.zooming .arcade-img {
+  transform: scale(3.5);
+}
+
+/* Door hotspot — covers the three glass doors */
+.door-hotspot {
   position: absolute;
-  inset: 20px 12%;
-  background: radial-gradient(circle at 50% 30%, rgba(164, 77, 255, 0.18) 0%, transparent 55%);
-  filter: blur(10px);
-}
-
-.arcade-front::after {
-  content: '';
-  position: absolute;
-  left: 10%;
-  top: 18%;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #a855f7;
-  box-shadow: 0 0 18px rgba(168, 85, 247, 0.75);
-}
-
-.door-frame {
-  position: absolute;
-  left: 50%;
-  bottom: 14%;
-  transform: translateX(-50%);
-  width: 180px;
-  height: 210px;
-  border-radius: 1.6rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 0 42px rgba(255, 255, 255, 0.08);
-  overflow: hidden;
-}
-
-.arcade-door {
+  left: 33%;
+  top: 52%;
+  width: 34%;
+  height: 40%;
+  text-decoration: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #2d1b66 0%, #190f31 70%, #11081c 100%);
-  position: relative;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border-radius: 0.4rem;
 }
 
-.arcade-door .door-label {
+.enter-label {
+  color: #fff;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255,255,255,0.9), 0 0 40px rgba(168,85,247,0.8);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.door-hotspot:hover .enter-label,
+.door-hotspot:focus-visible .enter-label {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.door-hotspot:focus-visible {
+  outline: 3px solid rgba(168,85,247,0.8);
+  outline-offset: 2px;
+}
+
+.arcade-cta {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+  color: var(--text2);
+  letter-spacing: 0.05em;
+}
+
+/* ── Sections ── */
+.section {
+  width: min(96vw, 900px);
+  margin: 4rem auto 0;
+}
+
+.section-title {
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-shadow: 0 0 16px rgba(167,139,250,0.3);
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Game cards ── */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  text-decoration: none;
+  color: var(--text);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(167,139,250,0.25);
+}
+
+.game-card__thumb {
+  width: 100%;
+  height: 160px;
+  background: var(--surface2);
+}
+
+.maze-thumb {
+  background: linear-gradient(135deg, #1a0a3a 0%, #2d1060 50%, #0f0520 100%);
+  position: relative;
+}
+.maze-thumb::after {
+  content: '🌀';
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.95);
+  font-size: 3.5rem;
+}
+
+.depths-thumb {
+  background: linear-gradient(135deg, #0a0f2a 0%, #0d2040 50%, #051020 100%);
+  position: relative;
+}
+.depths-thumb::after {
+  content: '⚔️';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+}
+
+.game-card__body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.6rem;
+}
+
+.game-card__body h3 {
   font-size: 1.1rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.game-card__body p {
+  font-size: 0.9rem;
+  color: var(--text2);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.play-btn {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 0.18s ease;
-  pointer-events: none;
+  align-self: flex-start;
 }
 
-.arcade-door:hover .door-label,
-.arcade-door:focus-visible .door-label {
-  opacity: 1;
+/* ── About ── */
+.about-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
 }
 
-.arcade-door::before,
-.arcade-door::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  width: 12px;
-  height: 42px;
-  background: rgba(255, 255, 255, 0.22);
-  border-radius: 999px;
-  transform: translateX(-50%);
-  top: 40%;
+.about-block p {
+  font-size: 1rem;
+  color: var(--text2);
+  line-height: 1.8;
 }
 
-.arcade-door::after {
-  top: 56%;
-  width: 9px;
-  opacity: 0.14;
+.about-block strong {
+  color: var(--text);
 }
 
-.arcade-door:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 30px rgba(167, 139, 250, 0.45);
+.about-block a {
+  color: var(--accent);
+  text-decoration: none;
 }
 
-.arcade-door:focus-visible {
-  outline: 3px solid rgba(168, 85, 247, 0.7);
-  outline-offset: 4px;
+.about-block a:hover {
+  text-decoration: underline;
 }
 
-.arcade-door.zooming {
-  animation: doorZoom 0.7s ease forwards;
-  transform-origin: center bottom;
-  box-shadow: 0 0 80px rgba(167, 139, 250, 0.75);
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-@keyframes doorZoom {
-  0% {
-    transform: translateZ(0) scale(1) rotateX(0deg) rotateY(0deg);
-  }
-  100% {
-    transform: translateZ(140px) scale(1.24) rotateX(3deg) rotateY(1.5deg);
-  }
+.tech-tags span {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
 }
 
-.zooming-body {
-  overflow: hidden;
+.contact-line {
+  font-size: 0.95rem !important;
 }
 
-.arcade-base {
-  position: absolute;
-  left: 50%;
-  bottom: -20px;
-  transform: translateX(-50%);
-  width: 92%;
-  height: 38px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 50% 30%, rgba(168, 85, 247, 0.35), transparent 60%);
-  filter: blur(1px);
-}
-
-.hint {
-  font-size: 0.95rem;
-  color: #c4d5ff;
-  opacity: 0.9;
-  text-align: center;
-  max-width: 28rem;
-  line-height: 1.5;
-}
-
+/* ── Footer ── */
 footer {
-  position: fixed;
-  bottom: 1rem;
-  font-size: 0.8rem;
-  color: #94a3b8;
-  text-align: center;
   width: 100%;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin-top: 4rem;
+  font-size: 0.82rem;
+  color: #5a5270;
+  border-top: 1px solid var(--border);
 }
 
+/* ── Responsive ── */
 @media (max-width: 520px) {
-  .arcade-building { transform: rotateX(10deg) rotateY(0deg); }
-  .door-frame { width: 150px; height: 190px; }
-  h1 { font-size: 2.4rem; }
+  .game-grid { grid-template-columns: 1fr; }
+  .about-block { padding: 1.4rem; }
 }

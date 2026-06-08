@@ -3,29 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgeeGaming.com</title>
+  <title>Agee Games — Free Browser Games by Jeremie Agee</title>
+  <meta name="description" content="Agee Games is a collection of free 3D browser games designed and built by solo developer Jeremie Agee. No download required — play Maze Runner, Depths of Ashenveil, and more right in your browser." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Agee Games</h1>
-  <p class="tagline">A modern arcade entrance below. Hover the doors to reveal ENTER, then click to zoom into the arcade lobby.</p>
 
-  <div class="arcade-scene">
-    <div class="arcade-building">
-      <div class="arcade-sign">Agee Arcade</div>
-      <div class="arcade-front">
-        <div class="door-frame">
-          <a class="arcade-door" href="https://ageegaming.com/AgeeArcade/" aria-label="Enter Agee Arcade">
-            <span class="door-label">Enter</span>
-          </a>
-        </div>
+  <!-- ── Hero ── -->
+  <header class="site-header">
+    <h1>Agee Games</h1>
+    <p class="tagline">Free browser games — no download, no sign-up. Just play.</p>
+  </header>
+
+  <main>
+
+    <!-- Arcade entrance -->
+    <section class="arcade-scene" aria-label="Enter the arcade">
+      <div class="arcade-wrap">
+        <img src="images/arcade.png" alt="Agee Arcade storefront lit up at night with neon signs" class="arcade-img" />
+        <a class="door-hotspot" href="https://jeremieagee.github.io/AgeeArcade/" aria-label="Enter Agee Arcade">
+          <span class="enter-label">Enter</span>
+        </a>
       </div>
-      <div class="arcade-base"></div>
-    </div>
-  </div>
+      <p class="arcade-cta">Hover the doors &amp; click to enter the arcade</p>
+    </section>
 
-  <p class="hint">Tap or click the arcade doors to enter the arcade. The building is your gateway to the Agee Arcade experience.</p>
-  <footer>&copy; 2026 ageegaming.com</footer>
+    <!-- Featured games -->
+    <section class="section" id="games">
+      <h2 class="section-title">Featured Games</h2>
+      <div class="game-grid">
+
+        <a class="game-card" href="https://jeremieagee.github.io/AgeeArcade/games/maze-runner/">
+          <div class="game-card__thumb maze-thumb" aria-hidden="true"></div>
+          <div class="game-card__body">
+            <h3>Maze Runner</h3>
+            <p>Navigate procedurally generated 3D mazes against the clock. Beat your best time and climb the leaderboard.</p>
+            <span class="play-btn">Play Now</span>
+          </div>
+        </a>
+
+        <a class="game-card" href="https://jeremieagee.github.io/AgeeArcade/games/depths-of-ashenveil/">
+          <div class="game-card__thumb depths-thumb" aria-hidden="true"></div>
+          <div class="game-card__body">
+            <h3>Depths of Ashenveil</h3>
+            <p>A dark fantasy dungeon crawler built entirely in the browser. Explore, fight, and survive the depths.</p>
+            <span class="play-btn">Play Now</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <h2 class="section-title">About the Developer</h2>
+      <div class="about-block">
+        <p>
+          Agee Games is designed and built entirely by <strong>Jeremie Agee</strong> — a solo developer with a deep passion for games and programming. Every game is crafted from scratch using modern web technologies and runs directly in your browser, free to play.
+        </p>
+        <p>
+          New games are actively in development. The arcade grows over time — check back often or <a href="https://jeremieagee.github.io/AgeeArcade/">visit the arcade</a> to see what's new.
+        </p>
+        <div class="tech-tags" aria-label="Technologies used">
+          <span>JavaScript</span><span>TypeScript</span><span>Rust</span>
+          <span>HTML &amp; CSS</span><span>React</span><span>Node.js</span>
+          <span>Supabase</span><span>Java</span>
+        </div>
+        <p class="contact-line">
+          Freelance inquiries: <a href="mailto:Jeremie.w.agee@gmail.com">Jeremie.w.agee@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>&copy; 2026 jeremieagee.github.io &mdash; Built by Jeremie Agee</footer>
   <script src="script.js"></script>
 </body>
 </html>

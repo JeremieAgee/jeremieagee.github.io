@@ -1,13 +1,13 @@
-const door = document.querySelector('.arcade-door');
+const hotspot = document.querySelector('.door-hotspot');
+const wrap = document.querySelector('.arcade-wrap');
 
-if (door) {
-  door.addEventListener('click', function(event) {
-    event.preventDefault();
-    if (door.classList.contains('zooming')) return;
-    door.classList.add('zooming');
-    document.body.classList.add('zooming-body');
+if (hotspot && wrap) {
+  hotspot.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (wrap.classList.contains('zooming')) return;
+    wrap.classList.add('zooming');
     setTimeout(() => {
-      window.location.href = door.href;
-    }, 700);
+      window.location.href = hotspot.href;
+    }, 800);
   });
 }
