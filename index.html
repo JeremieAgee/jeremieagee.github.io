@@ -3,61 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agee Games</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0d0d1a;
-      color: #e0e0ff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 0.05em;
-      color: #a78bfa;
-      margin-bottom: 0.5rem;
-    }
-
-    p.tagline {
-      font-size: 1.1rem;
-      color: #9ca3af;
-      margin-bottom: 2.5rem;
-    }
-
-    .cta {
-      display: inline-block;
-      padding: 0.85rem 2.2rem;
-      background: #7c3aed;
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .cta:hover { background: #6d28d9; }
-
-    footer {
-      position: fixed;
-      bottom: 1rem;
-      font-size: 0.8rem;
-      color: #4b5563;
-    }
-  </style>
+  <title>AgeeGaming.com</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Agee Games</h1>
-  <p class="tagline">Free browser games, no downloads needed.</p>
-  <a class="cta" href="https://jeremieagee.github.io/AgeeArcade/">Play Now &rarr;</a>
-  <footer>&copy; 2026 Agee Games</footer>
+  <h1>Agee Arcade</h1>
+  <p class="tagline">A modern arcade entrance in 3D space. Click the glowing doors to step into the arcade lobby and start the game.</p>
+
+  <div class="arcade-scene">
+    <div class="arcade-building">
+      <div class="arcade-sign">Agee Arcade</div>
+      <div class="arcade-front">
+        <div class="door-frame">
+          <a class="arcade-door" href="https://ageegaming.com/AgeeArcade/" aria-label="Enter Agee Arcade"></a>
+        </div>
+      </div>
+      <div class="arcade-base"></div>
+    </div>
+  </div>
+
+  <p class="hint">Tap or click the arcade doors to enter the arcade. The building is your gateway to the Agee Arcade experience.</p>
+  <footer>&copy; 2026 ageegaming.com</footer>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-# jeremieagee.github.io
+# ageegaming.com
 
 Portfolio leading to all creations
 
@@ -16,7 +16,7 @@ This portfolio is designed to:
 
 ## Getting Started
 
-To explore my portfolio, visit the live site at [jeremieagee.github.io](https://jeremieagee.github.io)
+To explore my portfolio, visit the live site at [ageegaming.com](https://ageegaming.com)
 
 ## Structure
 
