@@ -21,39 +21,36 @@ body {
   align-items: center;
 }
 
-/* ── Header ── */
+/* ── Header banner ── */
 .site-header {
   width: 100%;
-  text-align: center;
-  padding: 3rem 1rem 1.5rem;
-  background: linear-gradient(180deg, #130a2a 0%, transparent 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  background: #130a2a;
+  border-bottom: 1px solid rgba(167, 139, 250, 0.18);
 }
 
 .site-head-inner {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  gap: 1rem;
 }
 
 .logo-link {
   color: var(--accent);
   text-decoration: none;
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
-  letter-spacing: 0.12em;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.1em;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -81,18 +78,13 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
-.site-nav {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
 .tagline {
   font-size: 1.05rem;
   color: var(--text2);
   letter-spacing: 0.03em;
+  text-align: center;
+  padding: 1.25rem 1rem 0.5rem;
+  width: 100%;
 }
 
 /* ── Arcade hero ── */
