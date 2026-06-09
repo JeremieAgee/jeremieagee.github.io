@@ -27,6 +27,49 @@ body {
   text-align: center;
   padding: 3rem 1rem 1.5rem;
   background: linear-gradient(180deg, #130a2a 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-head-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.logo-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--text2);
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  border-color: rgba(167, 139, 250, 0.4);
+  color: var(--text);
 }
 
 h1 {
@@ -36,6 +79,14 @@ h1 {
   text-transform: uppercase;
   text-shadow: 0 0 24px rgba(167,139,250,0.4);
   margin-bottom: 0.5rem;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .tagline {

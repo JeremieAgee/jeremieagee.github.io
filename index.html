@@ -8,17 +8,24 @@
   <meta property="og:title" content="Agee Games — Free Browser Games by Jeremie Agee" />
   <meta property="og:description" content="Play free browser games built by solo developer Jeremie Agee. No downloads, no sign-ups, just fun." />
   <meta property="og:image" content="images/arcade.png" />
-  <meta property="og:url" content="https://jeremieagee.github.io/" />
+  <meta property="og:url" content="https://ageegames.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="images/arcade.png" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./AgeeArcade/css/main.css?v=20260604-arcade" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9709866738532619" crossorigin="anonymous"></script>
 </head>
 <body>
 
   <!-- ── Hero ── -->
   <header class="site-header">
-    <h1>Agee Games</h1>
+    <div class="site-head-inner">
+      <a class="logo-link" href="./">Agee Games</a>
+      <nav class="site-nav">
+        <a href="./AgeeArcade/leaderboards/">Leaderboards</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
     <p class="tagline">Free browser games — no download, no sign-up. Just play.</p>
   </header>
 
@@ -28,63 +35,43 @@
     <section class="arcade-scene" aria-label="Enter the arcade">
       <div class="arcade-wrap">
         <img src="images/arcade.png" alt="Agee Arcade storefront lit up at night with neon signs" class="arcade-img" />
-        <a class="door-hotspot" href="https://jeremieagee.github.io/AgeeArcade/" aria-label="Enter Agee Arcade">
+        <a class="door-hotspot" href="./AgeeArcade/" aria-label="Enter Agee Arcade">
           <span class="enter-label">Enter</span>
         </a>
       </div>
       <p class="arcade-cta">Hover the doors &amp; click to enter the arcade</p>
     </section>
 
-    <!-- Featured games -->
-    <section class="section" id="games">
-      <h2 class="section-title">Featured Games</h2>
-      <div class="game-grid">
-
-        <a class="game-card" href="https://jeremieagee.github.io/AgeeArcade/games/maze-runner/">
-          <div class="game-card__thumb maze-thumb" aria-hidden="true"></div>
-          <div class="game-card__body">
-            <h3>Maze Runner</h3>
-            <p>Navigate procedurally generated 3D mazes against the clock. Beat your best time and climb the leaderboard.</p>
-            <span class="play-btn">Play Now</span>
-          </div>
-        </a>
-
-        <a class="game-card" href="https://jeremieagee.github.io/AgeeArcade/games/depths-of-ashenveil/">
-          <div class="game-card__thumb depths-thumb" aria-hidden="true"></div>
-          <div class="game-card__body">
-            <h3>Depths of Ashenveil</h3>
-            <p>A dark fantasy dungeon crawler built entirely in the browser. Explore, fight, and survive the depths.</p>
-            <span class="play-btn">Play Now</span>
-          </div>
-        </a>
-
-      </div>
+    <section class="featured-section container">
+      <h2 class="section-title">Featured Game</h2>
+      <div id="featured-game"></div>
     </section>
 
-    <!-- About -->
-    <section class="section" id="about">
-      <h2 class="section-title">About the Developer</h2>
-      <div class="about-block">
-        <p>
-          Agee Games is designed and built entirely by <strong>Jeremie Agee</strong> — a solo developer with a deep passion for games and programming. Every game is crafted from scratch using modern web technologies and runs directly in your browser, free to play.
-        </p>
-        <p>
-          New games are actively in development. The arcade grows over time — check back often or <a href="https://jeremieagee.github.io/AgeeArcade/">visit the arcade</a> to see what's new.
-        </p>
-        <div class="tech-tags" aria-label="Technologies used">
-          <span>JavaScript</span><span>TypeScript</span><span>Rust</span>
-          <span>HTML &amp; CSS</span><span>React</span><span>Node.js</span>
-          <span>Supabase</span><span>Java</span>
-        </div>
-        <p class="contact-line">
-          Freelance inquiries: <a href="mailto:Jeremie.w.agee@gmail.com">Jeremie.w.agee@gmail.com</a>
-        </p>
-      </div>
+    <section class="games-section container">
+      <h2 class="section-title">All Games</h2>
+      <div id="game-grid" class="game-grid"></div>
+    </section>
+
+    <section class="section" id="comments">
+      <h2 class="section-title">Comments</h2>
+      <div id="agee-comments"></div>
     </section>
 
   </main>
 
-  <footer>&copy; 2026 jeremieagee.github.io &mdash; Built by Jeremie Agee &mdash; <a href="privacy.html">Privacy Policy</a></footer>
+  <footer>&copy; <span id="footer-year"></span> ageegames.com &mdash; Built by Jeremie Agee &mdash; <a href="privacy.html">Privacy Policy</a></footer>
+  <script>window.AgeeArcadeRoot = './AgeeArcade/';</script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="./AgeeArcade/js/analytics.js"></script>
+  <script src="./AgeeArcade/js/arcade-auth.js"></script>
+  <script src="./AgeeArcade/js/comments.js"></script>
+  <script src="./AgeeArcade/js/games.js"></script>
+  <script src="./AgeeArcade/js/main.js"></script>
   <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      ArcadeComments.init({ pageId: 'agee-home', containerId: 'agee-comments', theme: 'arcade' });
+    });
+  </script>
 </body>
 </html>
