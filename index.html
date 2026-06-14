@@ -8,7 +8,7 @@
   <meta property="og:title" content="Agee Games — Free Browser Games by Jeremie Agee" />
   <meta property="og:description" content="Play free browser games built by solo developer Jeremie Agee. No downloads, no sign-ups, just fun." />
   <meta property="og:image" content="images/arcade.png" />
-  <meta property="og:url" content="https://www.ageegaming.com/" />
+  <meta property="og:url" content="https://ageegaming.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="images/arcade.png" />
   <link rel="stylesheet" href="styles.css" />
@@ -21,10 +21,18 @@
   <header class="site-header">
     <div class="site-head-inner">
       <a class="logo-link" href="./">Agee Games</a>
-      <nav class="site-nav">
-        <a href="./AgeeArcade/leaderboards/">Leaderboards</a>
-        <a href="about.html">About</a>
-      </nav>
+      <div class="header-right">
+        <nav class="site-nav" id="header-auth-nav"></nav>
+        <div class="nav-menu">
+          <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="dropdown-menu">
+            <span class="menu-icon">☰</span>
+          </button>
+          <nav class="dropdown-menu" id="dropdown-menu">
+            <a href="./AgeeArcade/leaderboards/">Leaderboards</a>
+            <a href="about.html">About</a>
+          </nav>
+        </div>
+      </div>
     </div>
   </header>
   <p class="tagline">Free browser games — no download, no sign-up. Just play.</p>
