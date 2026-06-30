@@ -22,12 +22,21 @@
     <div class="site-head-inner">
       <a class="logo-link" href="./">Agee Games</a>
       <div class="header-right">
-        <nav class="site-nav" id="header-auth-nav"></nav>
+        <nav class="site-nav" id="header-auth-nav">
+          <a href="./">Home</a>
+          <a href="guides.html">Guides</a>
+          <a href="blog.html">Blog</a>
+          <a href="./AgeeArcade/leaderboards/">Leaderboards</a>
+          <a href="about.html">About</a>
+        </nav>
         <div class="nav-menu">
           <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="dropdown-menu">
             <span class="menu-icon">☰</span>
           </button>
           <nav class="dropdown-menu" id="dropdown-menu">
+            <a href="./">Home</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
             <a href="./AgeeArcade/leaderboards/">Leaderboards</a>
             <a href="about.html">About</a>
           </nav>
@@ -35,51 +44,73 @@
       </div>
     </div>
   </header>
-  <p class="tagline">Free browser games — no download, no sign-up. Just play.</p>
 
   <main>
-
-    <!-- Arcade entrance -->
-    <section class="arcade-scene" aria-label="Enter the arcade">
-      <div class="arcade-wrap">
-        <img src="images/arcade.png" alt="Agee Arcade storefront lit up at night with neon signs" class="arcade-img" />
-        <a class="door-hotspot" href="./AgeeArcade/" aria-label="Enter Agee Arcade">
-          <span class="enter-label">Enter</span>
-        </a>
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Free browser-first games</p>
+        <h1>Agee Arcade</h1>
+        <p class="hero-text">Agee Games delivers instantly playable browser games with crisp visuals, quick controls, and deep arcade-style replay value. No installation, no sign-up, and all content loads as static HTML so search engines and ad review bots can read the page instantly.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="./AgeeArcade/">Play Now</a>
+          <a class="secondary-button" href="guides.html">Read Game Guides</a>
+        </div>
       </div>
-      <p class="arcade-cta">Hover the doors &amp; click to enter the arcade</p>
+      <div class="hero-screenshot">
+        <img src="images/arcade.png" alt="Agee Arcade storefront lit up at night with neon signs" />
+      </div>
     </section>
 
-    <section class="featured-section container">
-      <h2 class="section-title">Featured Game</h2>
-      <div id="featured-game"></div>
+    <section class="section">
+      <h2 class="section-title">What You Can Play</h2>
+      <div class="card-grid">
+        <article class="feature-card">
+          <h3>Maze Runner</h3>
+          <p>Explore fast-paced labyrinths while racing the clock. Learn shortcuts, dodge traps, and collect treasure to beat your high score.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Depths of Ashenveil</h3>
+          <p>Fight through dark caverns filled with monsters and mystery. Build stronger equipment, learn enemy patterns, and survive longer each run.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Spear Fisher</h3>
+          <p>Cast nets, score points, and master timing. This browser game blends skillful aiming with progressive challenge and ocean-themed visuals.</p>
+        </article>
+      </div>
     </section>
 
-    <section class="games-section container">
-      <h2 class="section-title">All Games</h2>
-      <div id="game-grid" class="game-grid"></div>
+    <section class="section">
+      <h2 class="section-title">Why Agee Games</h2>
+      <ul class="info-list">
+        <li>Fully static landing page content for fast bot indexing.</li>
+        <li>Clear navigation to guides, blog posts, and developer info.</li>
+        <li>Direct Play Now access to the arcade homepage.</li>
+        <li>Privacy Policy, Terms of Service, and About page linked in every footer.</li>
+      </ul>
     </section>
 
-    <section class="section" id="comments">
-      <h2 class="section-title">Comments</h2>
-      <div id="agee-comments"></div>
+    <section class="section screenshot-grid">
+      <article>
+        <img src="images/maze-runner-thumb.jpg" alt="Maze Runner gameplay screenshot" />
+        <p>Maze Runner: fast navigation, secret paths, and high-score challenges.</p>
+      </article>
+      <article>
+        <img src="images/depths-of-ashenveil.png" alt="Depths of Ashenveil gameplay screenshot" />
+        <p>Depths of Ashenveil: deep dungeon combat, loot, and exploration.</p>
+      </article>
+      <article>
+        <img src="images/spear_fisher.png" alt="Spear Fisher gameplay screenshot" />
+        <p>Spear Fisher: timing-based fishing action with arcade scoring.</p>
+      </article>
     </section>
 
+    <section class="section">
+      <h2 class="section-title">Start Playing</h2>
+      <p class="section-text">Click the Play Now button above to enter Agee Arcade. The arcade opens into a game center where you can choose your favorite title, track scores, and play instantly from any modern browser.</p>
+      <p class="section-text">Need help? Visit the Guides page for gameplay tips or the Blog page for developer updates and patch notes.</p>
+    </section>
   </main>
 
-  <footer>&copy; 2026 ageegaming.com &mdash; Built by Jeremie Agee &mdash; <a href="privacy.html">Privacy Policy</a></footer>
-  <script>window.AgeeArcadeRoot = './AgeeArcade/';</script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <script src="./AgeeArcade/js/analytics.js"></script>
-  <script src="./AgeeArcade/js/arcade-auth.js"></script>
-  <script src="./AgeeArcade/js/comments.js"></script>
-  <script src="./AgeeArcade/js/games.js?v=20260610-spear"></script>
-  <script src="./AgeeArcade/js/main.js?v=20260610-spear"></script>
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      ArcadeComments.init({ pageId: 'agee-home', containerId: 'agee-comments', theme: 'arcade' });
-    });
-  </script>
+  <footer>&copy; 2026 ageegaming.com &mdash; Built by Jeremie Agee &mdash; <a href="privacy.html">Privacy Policy</a> &mdash; <a href="terms.html">Terms of Service</a> &mdash; <a href="about.html">About</a></footer>
 </body>
 </html>

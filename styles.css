@@ -359,6 +359,147 @@ main {
   line-height: 1.8;
 }
 
+.hero-panel {
+  width: min(96vw, 1200px);
+  margin: 2rem auto 0;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.hero-eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.hero-text,
+.section-text {
+  font-size: 1rem;
+  color: var(--text2);
+  line-height: 1.85;
+  max-width: 56rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.45rem;
+  border-radius: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: #fff;
+}
+
+.secondary-button {
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  border: 1px solid rgba(167,139,250,0.2);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(99,102,241,0.18);
+}
+
+.hero-screenshot img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.1rem;
+  border: 1px solid var(--border);
+}
+
+.card-grid,
+.screenshot-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  min-height: 180px;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.feature-card p {
+  color: var(--text2);
+  line-height: 1.75;
+}
+
+.info-list {
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+  padding-left: 0;
+}
+
+.info-list li {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 1rem 1.2rem;
+  border-radius: 0.9rem;
+  color: var(--text2);
+}
+
+.screenshot-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.screenshot-grid article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.screenshot-grid img {
+  width: 100%;
+  display: block;
+}
+
+.screenshot-grid p {
+  padding: 1rem;
+  color: var(--text2);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
 .about-block strong {
   color: var(--text);
 }
